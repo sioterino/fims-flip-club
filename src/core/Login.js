@@ -20,6 +20,7 @@ class Login {
     const session = Storage.loadFromSessionStorage("fims-flip-club:session");
 
     if (session?.isLoggedIn) {
+      document.querySelector(".login-wrapper").classList.add("hide");
       document.querySelector(".app-body").classList.remove("hide");
       this.signin.classList.add("hide");
       this.signup.classList.add("hide");
@@ -56,7 +57,7 @@ class Login {
     const data = {};
 
     input.forEach((value, key) => {
-      data[key] = value;
+      data[key] = value.trim();
     });
 
     switch (method) {
@@ -107,6 +108,7 @@ class Login {
       isLoggedIn: true,
     });
 
+    document.querySelector(".login-wrapper").classList.add("hide");
     document.querySelector(".app-body").classList.remove("hide");
     this.signin.classList.toggle("hide");
   }

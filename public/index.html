@@ -13,42 +13,43 @@
   </head>
   <body>
 
-    <div class="login signup hide">
-        <h3>Sign Up</h3>
-        <form class="signup">
-            <div class="label">
-                <input name="name" id="signup-name" type="text" required autocomplete="off" spellcheck="false">
-                <label for="signup-name">Name</label>
-            </div>
-            <div class="label">
-                <input name="password" id="signup-password" type="password" required autocomplete="off" spellcheck="false">
-                <label for="signup-password">Password</label>
-            </div>
-            <button type="submit">Sign Up</button>
-        </form>
-        <p class="send-to-sigin">Already have an account?<span class="link">Login</span></p>
-        <p class="warning red hidden">placeholder</p>
-    </div>
-
-    <div class="login signin">
-        <h3>Login</h3>
-        <form class="signin">
-            <div class="label">
-                <input name="name" id="signin-name" type="text" required autocomplete="off" spellcheck="false">
-                <label for="signin-name">Name</label>
-            </div>
-            <div class="label">
-                <input name="password" id="signin-password" type="password" required autocomplete="off" spellcheck="false">
-                <label for="signin-password">Password</label>
-            </div>
-            <button type="submit">Login</button>
-        </form>
-        <p class="send-to-sigup">Don't have an account?<span class="link">Sign up</span></p>
-        <p class="warning red hidden">placeholder</p>
-    </div>
+    <article class="login-wrapper">
+        <div class="login signup hide">
+            <h3>Sign Up</h3>
+            <form method="post" class="signup">
+                <div class="label">
+                    <input name="name" id="signup-name" type="text" required autocomplete="off" spellcheck="false">
+                    <label for="signup-name">Name</label>
+                </div>
+                <div class="label">
+                    <input name="password" id="signup-password" type="password" required autocomplete="off" spellcheck="false">
+                    <label for="signup-password">Password</label>
+                </div>
+                <button type="submit">Sign Up</button>
+            </form>
+            <p class="send-to-sigin">Already have an account?<span class="link">Login</span></p>
+            <p class="warning red hidden">placeholder</p>
+        </div>
+        <div class="login signin">
+            <h3>Login</h3>
+            <form method="post" class="signin">
+                <div class="label">
+                    <input name="name" id="signin-name" type="text" required autocomplete="off" spellcheck="false">
+                    <label for="signin-name">Name</label>
+                </div>
+                <div class="label">
+                    <input name="password" id="signin-password" type="password" required autocomplete="off" spellcheck="false">
+                    <label for="signin-password">Password</label>
+                </div>
+                <button type="submit">Login</button>
+            </form>
+            <p class="send-to-sigup">Don't have an account?<span class="link">Sign up</span></p>
+            <p class="warning red hidden">placeholder</p>
+        </div>
+    </article>
 
     <div class="app-body hide">
-        <!-- <button type="button" onclick="logout()">logout</button> -->
+        <button type="button" class="logout-button">logout</button>
     </div>
 
   </body>

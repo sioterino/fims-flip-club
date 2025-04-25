@@ -1,0 +1,71 @@
+.app-body {
+    background-color: green;
+    height: 100vh;
+}
+
+header {
+}
+
+nav {
+    max-width: var(--max-width);
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-inline: 1rem;
+}
+
+.user-options {
+    position: relative;
+}
+
+.userinfo {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    cursor: pointer;
+    padding: .3rem 1rem;
+}
+
+.icon.user:hover ~ .username,
+.username:hover {
+    text-decoration: underline;
+    text-underline-offset: .3rem;
+}
+
+.user-dropdown {
+    position: absolute;
+    display: none;
+    list-style: none;
+    background-color: rgba(0, 0, 0, .5);
+    backdrop-filter: blur(5px);
+    color: white;
+    border-radius: .25rem;
+    width: 100%;
+    text-align: center;
+    top: 110%;
+}
+
+.user-dropdown li {
+    padding: .5rem 1rem;
+    cursor: pointer;
+}
+
+.user-dropdown li:first-child {
+    border-radius: .25rem .25rem 0px 0px;
+}
+
+.user-dropdown li:last-child {
+    border-radius: 0px 0px .25rem .25rem;
+}
+
+.user-dropdown li:hover {
+    background-color: rgba(255, 255, 255, .2);
+}
+
+.user-options:hover .user-dropdown {
+    display: block;
+}
