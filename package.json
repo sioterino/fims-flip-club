@@ -1,0 +1,11 @@
+{
+  "name": "fims-flip-club",
+  "version": "1.0.0",
+  "description": "Memory Game themed of LE SSERAFIM's Fim's Club",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "sioterino",
+  "license": "ISC"
+}

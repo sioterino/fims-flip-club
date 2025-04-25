@@ -1,0 +1,101 @@
+.login {
+    margin-bottom: 2rem;
+    text-align: center;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    
+    background-color: white;
+
+    padding: 1rem;
+    border-radius: 1rem;
+
+    margin: auto;
+}
+
+.login p {
+    display: flex;
+    justify-content: center;
+}
+
+.login form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+}
+
+.login input {
+    outline: none;
+    offset: none;
+    border: none;
+
+    font-size: 1rem;
+    line-height: 150%;
+
+    padding: .5rem 1rem;
+
+    border-radius: .25rem;
+    border: 1px solid lightgray;
+    transition: all .2s ease-in-out;
+}
+
+.login input:focus {
+    border: 1px solid var(--select-10);
+}
+
+.login .label {
+    position: relative;
+}
+
+.login label {
+    color: gray;
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    transform: translateY(-50%);
+    padding: 0px .5rem;
+    transition: all .2s ease-in-out;
+    cursor: text;
+}
+
+.login input:focus ~ label,
+.login input:valid ~ label {
+    background-color: white;
+    top: 0px;
+    font-size: .7rem;
+}
+
+.login input:focus ~ label {
+    color: var(--select-10);
+}
+
+
+.login button {
+    outline: none;
+    offset: none;
+    border: none;
+    background-color: var(--select-10);
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: .5rem 4rem;
+    border-radius: .25rem;
+    cursor: pointer;
+}
+
+.login button:active {
+    background-color: var(--select-5);
+}
+
+.login .link {
+    color: blue;
+    cursor: pointer;
+    width: fit-content;
+    margin-left: .5rem;
+}
+
+.link:hover {
+    text-decoration: underline;
+}

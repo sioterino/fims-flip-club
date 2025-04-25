@@ -1,0 +1,20 @@
+body {
+  background-color: rgb(21, 66, 124);
+}
+.board {
+  display: grid;
+  grid-template: repeat(8, 100px) / repeat(8, 100px);
+  gap: 0.5rem;
+}
+.img {
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.card {
+  background-image: url(../src/assets/images/kimachi-4.png);
+  height: 100px;
+  width: 100px;
+  background-color: white;
+  border-radius: 0.3rem;
+  cursor: pointer;
+}

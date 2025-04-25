@@ -1,0 +1,13 @@
+.warning {
+    color: red;
+    font-style: italic;
+}
+
+.hidden {
+    user-select: none;
+    color: transparent;
+}
+
+.hide {
+    display: none;
+}
