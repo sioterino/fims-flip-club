@@ -39,9 +39,10 @@
   scroll-behavior: smooth;
 }
 
-body {
-    height: 98vh;
-
-    display: flex;
-    flex-direction: column;
+.icon {
+  font-family: 'Material Symbols Rounded', sans-serif;
+  font-variation-settings: 'FILL' 1;
+  font-size: 28px;
+  font-weight: 400;
+  user-select: none;
 }

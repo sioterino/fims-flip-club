@@ -20,6 +20,7 @@ class Login {
     const session = Storage.loadFromSessionStorage("fims-flip-club:session");
 
     if (session?.isLoggedIn) {
+      document.querySelector(".username").textContent = session.username;
       document.querySelector(".login-wrapper").classList.add("hide");
       document.querySelector(".app-body").classList.remove("hide");
       this.signin.classList.add("hide");
@@ -107,6 +108,8 @@ class Login {
       username: user.username,
       isLoggedIn: true,
     });
+
+    document.querySelector(".username").textContent = user.username;
 
     document.querySelector(".login-wrapper").classList.add("hide");
     document.querySelector(".app-body").classList.remove("hide");

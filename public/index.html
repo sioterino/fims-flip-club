@@ -7,6 +7,8 @@
 
     <link rel="stylesheet" href="../src/styles/global.css">
     <link rel="stylesheet" href="../src/styles/login.css">
+    <link rel="stylesheet" href="../src/styles/header.css">
+    <link rel="stylesheet" href="../src/styles/card.css">
     <link rel="stylesheet" href="../src/styles/auxstyle.css">
 
     <script type="module" src="../src/main.js" defer></script>
@@ -49,7 +51,32 @@
     </article>
 
     <div class="app-body hide">
-        <button type="button" class="logout-button">logout</button>
+
+        <header>
+            <nav>
+                <div class="logotipo">
+                    <h1 class="page-name">Fim's Flip Club</h1>
+                    <!-- <img src="" alt=""> -->
+                </div>
+                <div class="user-options">
+                    <div class="userinfo">
+                        <span class="icon user">account_circle</span>
+                        <p class="username">Username</p>
+                    </div>
+                    <ul class="user-dropdown">
+                        <li>Settings</li>
+                        <li class="logout-button">Log Out</li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+        <main>
+            <div class="board">
+
+            </div>
+        </main>
+
     </div>
 
   </body>
