@@ -1,17 +1,50 @@
 .board {
   display: grid;
   grid-template: repeat(8, 100px) / repeat(8, 100px);
-  gap: 0.5rem;
+  gap: .5rem;
 }
 .img {
   background-size: cover;
   background-repeat: no-repeat;
 }
+
 .card {
-  background-image: url(../src/assets/images/kimachi-4.png);
+  perspective: 1000px;
   height: 100px;
   width: 100px;
-  background-color: white;
-  border-radius: 0.3rem;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform .6s;
+  transform-style: preserve-3d;
   cursor: pointer;
+  background-color: white;
+  border-radius: .3rem;
+}
+
+.card.flipped .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 10px;
+}
+
+/* Front face */
+.card-back {
+  background-color: var(--dark-blue);
+}
+
+/* Back face */
+.card-front {
+  transform: rotateY(180deg);
+  background-size: cover;
+  background-position: center;
 }
