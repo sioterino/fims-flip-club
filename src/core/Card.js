@@ -1,6 +1,8 @@
+import { Storage } from "../utils/Storage.js";
+
 class Card {
-  constructor(url, id) {
-    this.id = id;
+  constructor(url) {
+    this.id = Storage.createId();
     this.url = url;
     this.file = this.#getFileName(this.url)
 
@@ -8,11 +10,11 @@ class Card {
     this.isMatched = false;
 
     this.element = this.#createCard()
-    this.#init()
   }
 
   flip() {
     this.isFlipped = !this.isFlipped;
+    this.element.classList.toggle('flipped', this.isFlipped);
   }
 
   match() {
@@ -41,20 +43,24 @@ class Card {
   
     return el;
   }
-  
-
-  #init() {
-    this.element.addEventListener('click', () => {
-      this.flip();
-      this.element.classList.toggle('flipped', this.isFlipped);
-    });
-  }
-  
 
   #getFileName(url) {
     return url.split("/").pop()
   }
 
+  disable() {
+    this.element.style.pointerEvents = 'none'
+  }
+
+  enable() {
+    this.element.style.pointerEvents = 'auto'
+  }
+
+  paintGray() {
+    setTimeout(() => {
+      this.element.style.filter = 'grayscale(1)'
+    }, 500);
+  }
 
 }
 

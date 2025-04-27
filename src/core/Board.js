@@ -1,5 +1,4 @@
 import { Card } from "./Card.js";
-import { Storage } from "../utils/Storage.js";
 
 class Board {
   #characters = ["heurimong", "hongppippi", "kimachi", "sakkukku", "zuharong"];
@@ -18,17 +17,15 @@ class Board {
 
     this.#characters.forEach((fim) => {
       for (let i = 1; i < 7; i++) {
-        half.push(
-          new Card(`../src/assets/images/${fim}-${i}.png`, Storage.createId())
-        );
+        half.push(new Card(`../src/assets/images/${fim}-${i}.png`));
       }
     });
-    half.push(new Card(`../src/assets/images/summerz.png`, Storage.createId()));
-    half.push(new Card(`../src/assets/images/yesz.png`, Storage.createId()));
+    half.push(new Card(`../src/assets/images/summerz.png`));
+    half.push(new Card(`../src/assets/images/yesz.png`));
 
     this.cards = [
         ...half,
-        ...half.map(card => new Card(card.url, Storage.createId()))
+        ...half.map(card => new Card(card.url))
       ];
       
   }
@@ -39,6 +36,18 @@ class Board {
 
   loadCards() {
     this.cards.forEach((c) => this.board.append(c.element));
+  }
+
+  getCardById(id) {
+    return this.cards.find(c => c.id == id)
+  }
+
+  disable () {
+    this.board.style.pointerEvents = "none";
+  }
+
+  enable () {
+    this.board.style.pointerEvents = "auto";
   }
 }
 

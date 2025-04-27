@@ -1,0 +1,9 @@
+.table {
+  max-width: var(--max-width);
+  margin: auto;
+}
+
+.board {
+    width: fit-content;
+    margin: auto;
+}
