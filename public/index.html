@@ -3,13 +3,18 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Fim's Flip Club</title>
+    <link rel="icon" href="../src/assets/images/fims-club-logo.png">
 
     <link rel="stylesheet" href="../src/styles/global.css">
+
     <link rel="stylesheet" href="../src/styles/login.css">
     <link rel="stylesheet" href="../src/styles/header.css">
+
     <link rel="stylesheet" href="../src/styles/table.css">
     <link rel="stylesheet" href="../src/styles/card.css">
+
     <link rel="stylesheet" href="../src/styles/auxstyle.css">
 
     <script type="module" src="../src/main.js" defer></script>
@@ -55,10 +60,10 @@
 
         <header>
             <nav>
-                <div class="logotipo">
+                <a class="logotipo" href="./index.html">
                     <h1 class="page-name">Fim's Flip Club</h1>
-                    <!-- <img src="" alt=""> -->
-                </div>
+                    <img src="../src/assets/images/fims-club-logo.png" alt="fim's flip club logo">
+                </a>
                 <div class="user-options">
                     <div class="userinfo">
                         <span class="icon user">account_circle</span>
@@ -74,13 +79,13 @@
 
         <main>
             <article class="table">
-                <div class="game-indo">
+                <div class="game-info">
                     <button type="button" class="new-game-button">New Game</button>
                     <button type="button" class="pause-button">Pause</button>
                     <button type="button" class="resume-button hide hidden">Resume</button>
-                    <div class="timer">
-                        <button type="button" class="stop-timer-button">stop timer</button>
-                    </div>
+
+                    <div class="timer"></div>
+                    <p class="score">0</p>
                 </div>
                 <div class="board"></div>
             </article>

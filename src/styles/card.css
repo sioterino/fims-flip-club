@@ -37,12 +37,12 @@
   border-radius: 10px;
 }
 
-/* Front face */
 .card-back {
-  background-color: var(--dark-blue);
+  background-image: url(../assets/images/back-card.png);
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
-/* Back face */
 .card-front {
   transform: rotateY(180deg);
   background-size: cover;

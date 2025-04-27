@@ -12,7 +12,7 @@ document
   .querySelector(".logout-button")
   ?.addEventListener("click", login.logout);
 
-const game = new Game()
+let game = new Game()
 game.newGame()
 
 document.querySelector('.new-game-button').addEventListener('click', game.newGame)

@@ -3,28 +3,38 @@ import { Timer } from "./Timer.js";
 
 class Game {
   constructor() {
-    this.timer = null;
+    this.board = new Board();
+    this.timer = new Timer();
 
-    this.board = null;
     this.lockBoard = false;
 
     this.firstCard = null;
     this.secondCard = null;
 
-    this.score = 0;
+    this.score = 0
+
+    this.scoreBoard = document.querySelector('.score')
   }
 
   newGame = () => {
     this.board = new Board();
+    this.timer = new Timer();
+
+    this.lockBoard = false;
+
+    this.firstCard = null;
+    this.secondCard = null;
+
     this.board.board.innerHTML = "";
     document.querySelector(".timer").innerHTML = "";
 
-    this.timer = new Timer();
+    this.score = 0
+    this.#updateScoreBoard()
 
-    this.start();
+    this.#start();
   };
 
-  start() {
+  #start() {
     let gameStarted = false;
 
     this.board.shuffle();
@@ -41,12 +51,12 @@ class Game {
         const clickedCard = this.board.getCardById(
           e.target.closest(".card").id
         );
-        this.handleCardClick(clickedCard);
+        this.#handleCardClick(clickedCard);
       });
     });
   }
 
-  handleCardClick(card) {
+  #handleCardClick(card) {
     if (this.lockBoard || card === this.firstCard || this.timer.intervalId === null) return;
 
     card.flip();
@@ -63,10 +73,10 @@ class Game {
     this.lockBoard = true;
     this.board.disable();
 
-    this.checkForMatch();
+    this.#checkForMatch();
   }
 
-  checkForMatch() {
+  #checkForMatch() {
     if (this.firstCard.file === this.secondCard.file) {
       this.firstCard.disable();
       this.secondCard.disable();
@@ -78,7 +88,8 @@ class Game {
       this.secondCard.match();
 
       this.score += 2;
-      this.resetTurn();
+      this.#updateScoreBoard()
+      this.#resetTurn();
 
       if (this.score === this.board.cards.length) {
         this.endGame();
@@ -88,12 +99,12 @@ class Game {
         this.firstCard.flip();
         this.secondCard.flip();
 
-        this.resetTurn();
+        this.#resetTurn();
       }, 1000);
     }
   }
 
-  resetTurn() {
+  #resetTurn() {
     if (!this.firstCard.isMatched && !this.secondCard.isMatched) {
       this.firstCard.enable();
       this.secondCard.enable();
@@ -108,13 +119,12 @@ class Game {
 
   endGame() {
     this.timer.stop();
-    console.log("Game Over! You matched all cards!");
   }
 
   pause = () => {
-    this.board.disable(); // Ensure the board is locked when paused
-    this.timer.pause(); // Stop the timer
-    this.lockBoard = true; // Prevent further actions during the pause
+    this.board.disable();
+    this.timer.pause();
+    this.lockBoard = true;
   };
 
   resume = () => {
@@ -122,6 +132,10 @@ class Game {
     this.timer.resume();
     this.lockBoard = false;
   };
+
+  #updateScoreBoard() {
+    this.scoreBoard.textContent = this.score
+  }
 }
 
 export { Game };
