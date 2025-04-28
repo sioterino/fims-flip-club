@@ -1,4 +1,5 @@
 import { Storage } from "../utils/Storage.js";
+import { init } from '../main.js';
 
 class Login {
   constructor() {
@@ -109,11 +110,14 @@ class Login {
       isLoggedIn: true,
     });
 
+    
     document.querySelector(".username").textContent = user.username;
-
+    
     document.querySelector(".login-wrapper").classList.add("hide");
     document.querySelector(".app-body").classList.remove("hide");
     this.signin.classList.toggle("hide");
+    
+    init()
   }
 
   #verifyUserExists(username) {

@@ -1,35 +1,59 @@
 import { Login } from "./core/Login.js";
 import { User } from "./core/User.js";
 import { Game } from "./core/Game.js";
+import { Storage } from "./utils/Storage.js";
 
-const user = new User();
-const login = new Login();
+class Main {
+    constructor() {
+        this.login = new Login();
+        this.session = Storage.loadFromSessionStorage('fims-flip-club:session');
+        this.userdata = Storage.loadFromLocalStorage('fims-flip-club:userdata') || [];
 
-document
-  .querySelector(".logout-button")
-  ?.addEventListener("click", login.logout);
+        if (!this.session || !this.session.id) return;
 
-const game = new Game()
-game.newGame('easy')
+        const userDataEntry = this.userdata.find(u => u.id === this.session.id);
+        this.user = new User(userDataEntry ?? { id: this.session.id });
 
-document.querySelector('.new-game-button').addEventListener('click', game.newGame)
+        this.game = new Game(this.user);
+        this.setupGame();
+    }
 
-document.querySelector('.select-option select').addEventListener('change', e => game.newGame(e.target.value))
+    setupGame() {
+        this.game.newGame('medium');
 
-const pause = document.querySelector('.pause-button')
-const resume = document.querySelector('.resume-button')
+        document.querySelector('.new-game-button').addEventListener('click', this.game.newGame);
 
-pause.addEventListener('click', () => {
-    game.pause()
-    pause.classList.toggle('hide')
-    pause.classList.toggle('hidden')
-    resume.classList.toggle('hide')
-    resume.classList.toggle('hidden')
-})
-resume.addEventListener('click', () => {
-    game.resume()
-    pause.classList.toggle('hide')
-    pause.classList.toggle('hidden')
-    resume.classList.toggle('hide')
-    resume.classList.toggle('hidden')
-})
+        document.querySelector('.select-option select').addEventListener('change', (e) => this.game.newGame(e.target.value));
+
+        const pause = document.querySelector('.pause-button');
+        const resume = document.querySelector('.resume-button');
+
+        pause.addEventListener('click', () => {
+            this.game.pause();
+            pause.classList.toggle('hide');
+            pause.classList.toggle('hidden');
+            resume.classList.toggle('hide');
+            resume.classList.toggle('hidden');
+        });
+
+        resume.addEventListener('click', () => {
+            this.game.resume();
+            pause.classList.toggle('hide');
+            pause.classList.toggle('hidden');
+            resume.classList.toggle('hide');
+            resume.classList.toggle('hidden');
+        });
+    }
+}
+
+let main = null;
+
+export function init() {
+  if (main) main = null;
+
+  main = new Main();
+
+  document.querySelector(".logout-button")?.addEventListener("click", main.login.logout);
+}
+
+init();

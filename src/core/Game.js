@@ -1,20 +1,20 @@
 import { Board } from "./Board.js";
 import { Timer } from "./Timer.js";
+import { Storage } from "../utils/Storage.js";
 
 class Game {
-  constructor(mode = 'medium') {
-    this.mode = mode
+  constructor(user, mode = 'medium') {
+    this.user = user
 
+    this.mode = mode
     this.board = new Board(this.mode);
     this.timer = new Timer();
 
     this.lockBoard = false;
-
     this.firstCard = null;
     this.secondCard = null;
 
     this.score = 0
-
     this.scoreBoard = document.querySelector('.score')
   }
 
@@ -22,18 +22,16 @@ class Game {
     this.mode = mode;
 
     this.board = new Board(this.mode);
-    this.timer = new Timer();
+    this.board.board.innerHTML = "";
+
+    this.timer.reset();
 
     this.lockBoard = false;
-
     this.firstCard = null;
     this.secondCard = null;
 
-    this.board.board.innerHTML = "";
-    document.querySelector(".timer").innerHTML = "";
-
-    this.score = 0
-    this.#updateScoreBoard()
+    this.score = 0;
+    this.#updateScoreBoard();
 
     this.#start();
   };
@@ -123,6 +121,7 @@ class Game {
 
   endGame() {
     this.timer.stop();
+    this.#saveResult()
   }
 
   pause = () => {
@@ -139,6 +138,18 @@ class Game {
 
   #updateScoreBoard() {
     this.scoreBoard.textContent = this.score
+  }
+
+  #saveResult() {
+
+    const gameData = {
+      time: this.timer.getTime(),
+      mode: this.mode,
+      score: this.score
+    }
+
+    this.user.pushGame(gameData)
+
   }
 }
 
