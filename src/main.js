@@ -1,9 +1,6 @@
 import { Login } from "./core/Login.js";
 import { User } from "./core/User.js";
 import { Game } from "./core/Game.js";
-import { Timer } from "./core/Timer.js";
-import { Board } from "./core/Board.js";
-import { Card } from "./core/Card.js";
 
 const user = new User();
 const login = new Login();
@@ -12,10 +9,12 @@ document
   .querySelector(".logout-button")
   ?.addEventListener("click", login.logout);
 
-let game = new Game()
-game.newGame()
+const game = new Game()
+game.newGame('easy')
 
 document.querySelector('.new-game-button').addEventListener('click', game.newGame)
+
+document.querySelector('.select-option select').addEventListener('change', e => game.newGame(e.target.value))
 
 const pause = document.querySelector('.pause-button')
 const resume = document.querySelector('.resume-button')

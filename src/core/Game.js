@@ -2,8 +2,10 @@ import { Board } from "./Board.js";
 import { Timer } from "./Timer.js";
 
 class Game {
-  constructor() {
-    this.board = new Board();
+  constructor(mode = 'medium') {
+    this.mode = mode
+
+    this.board = new Board(this.mode);
     this.timer = new Timer();
 
     this.lockBoard = false;
@@ -16,8 +18,10 @@ class Game {
     this.scoreBoard = document.querySelector('.score')
   }
 
-  newGame = () => {
-    this.board = new Board();
+  newGame = (mode = this.mode) => {
+    this.mode = mode;
+
+    this.board = new Board(this.mode);
     this.timer = new Timer();
 
     this.lockBoard = false;
