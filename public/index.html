@@ -14,7 +14,9 @@
 
     <link rel="stylesheet" href="../src/styles/table.css">
     <link rel="stylesheet" href="../src/styles/card.css">
+    <link rel="stylesheet" href="../src/styles/settings.css">
 
+    <link rel="stylesheet" href="../src/styles/dialog.css">
     <link rel="stylesheet" href="../src/styles/auxstyle.css">
 
     <script type="module" src="../src/main.js" defer></script>
@@ -98,9 +100,87 @@
                 </div>
                 <div class="board"></div>
             </article>
-        </main>
 
+            <article class="settings">
+                <aside>
+                    <div class="option">
+                        <input type="radio" name="user-option" id="account" checked class="hide">
+                        <label for="account">Account</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="user-option" id="preferences" class="hide">
+                        <label for="preferences">Preferences</label>
+                    </div>
+                </aside>
+                <section>
+                    <div class="account-option">
+                        <h3>Account Settings</h3>
+                        <div class="username-settings">
+                            <div class="head">
+                                <label for="username">Username</label>
+                                <p id="edit-username"  class="edit">edit</p>
+                            </div>
+                            <input type="text" id="username" disabled placeholder="Username">
+                        </div>
+                        <div class="password-settings">
+                            <div class="head">
+                                <label for="password">Password</label>
+                                <p id="edit-password" class="edit">edit</p>
+                            </div>
+                            <input type="password" id="password" disabled value="Password">
+                        </div>
+
+                        <div class="account-stats">
+                            <h3>Account Statistics</h3>
+                            <p class="account-score">0</p>
+                            <p class="best-time">0s</p>
+                        </div>
+                    </div>
+
+
+                    <div class="preferences-option hide">
+                        <h3>User Preferences</h3>
+                    </div>
+                </section>
+            </article>
+        </main>
     </div>
+
+    <dialog id="edit-username-dialog">
+        <div class="wrapper">
+            <h2>Edit Username</h2>
+            <form method="dialog">
+                <div class="label">
+                    <input id="edit-username-input" name="username" type="text" required autocomplete="off" spellcheck="false">
+                    <label for="edit-username-input">New Username</label>
+                </div>
+                <div class="buttons">
+                    <button class="cancel-button" type="button">Cancel</button>
+                    <button class="submit-button" type="submit">Salvar</button>
+                </div>
+            </form>
+        </div>
+    </dialog>
+
+    <dialog id="edit-password-dialog">
+        <div class="wrapper">
+            <h2>Edit Password</h2>
+            <form method="dialog">
+                <div class="label">
+                    <input id="old-password-input" name="old-password" type="password" required>
+                    <label for="old-password-input">Old Password</label>
+                </div>
+                <div class="label">
+                    <input id="new-password-input" name="new-password" type="password" required>
+                    <label for="new-password-input">New Password</label>
+                </div>
+                <div class="buttons">
+                    <button class="cancel-button" type="button">Cancel</button>
+                    <button class="submit-button" type="submit">Salvar</button>
+                </div>
+            </form>
+        </div>
+    </dialog>
 
   </body>
 </html>

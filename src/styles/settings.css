@@ -1,0 +1,67 @@
+.settings {
+    max-width: var(--max-width);
+    margin: auto;
+    display: flex;  
+    min-height: 80vh;
+    padding: 3rem;
+    gap: 2rem;
+}
+
+aside {
+    background-color: #f8f8f8;
+    border-radius: .5rem;
+}
+
+.option label {
+    padding: 1rem 2em;
+    width: 80px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.option:first-child label {
+    border-radius: .5rem .5rem 0rem 0rem;
+}
+
+.option label:hover {
+    background-color: #f0f0f0;
+}
+
+input[type="radio"]:checked + label {
+    background-color: #e0e0e0;
+}
+
+.settings section {
+    background-color: #f8f8f8;
+    padding: 5rem;
+    width: 100%;
+    border-radius: .5rem;
+}
+
+.settings .head {
+    padding-left: .5rem;
+    display: flex;
+    gap: 1rem;
+    margin: 1rem 0px .3rem;
+}
+
+.edit {
+    text-decoration: underline;
+    user-select: none;
+}
+
+.edit:hover {
+    color: var(--select-10);
+    cursor: pointer;
+}
+
+.settings input {
+    padding: .7rem 1rem .55rem;
+    background-color: transparent;
+    border: 1px solid lightgray;
+    border-radius: .5rem;
+}
+
+.settings input::placeholder {
+    font-size: 1rem;
+}
