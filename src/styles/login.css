@@ -44,6 +44,8 @@
     border-radius: .25rem;
     border: 1px solid lightgray;
     transition: all .2s ease-in-out;
+
+    width: 250px;
 }
 
 .login input:focus {
@@ -94,6 +96,8 @@
     padding: .5rem 4rem;
     border-radius: .25rem;
     cursor: pointer;
+
+    width: 284px;
 }
 
 .login button:hover {

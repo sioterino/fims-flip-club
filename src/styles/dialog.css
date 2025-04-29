@@ -41,6 +41,8 @@ dialog input {
     border-radius: .25rem;
     border: 1px solid lightgray;
     transition: all .2s ease-in-out;
+
+    width: 250px;
 }
 
 dialog input:focus {
@@ -79,6 +81,9 @@ dialog input:focus ~ label {
 
 dialog .buttons {
     margin-top: 1rem;
+    width: 284px;
+    display: flex;
+    justify-content: space-between;
 }
 
 dialog button {
@@ -98,7 +103,8 @@ dialog button {
 }
 
 dialog .submit-button { 
-    padding-inline: 2.7rem;
+    /* padding-inline: 2.7rem; */
+    width: 60%;
     background-color: var(--select-10);
 }
 
@@ -111,7 +117,8 @@ dialog .submit-button:active {
 }
 
 dialog .cancel-button {
-    padding-inline: 1rem;
+    width: 38%;
+    /* padding-inline: 1rem; */
     background-color: #C0C0C0;
 }
 

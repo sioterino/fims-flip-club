@@ -80,7 +80,7 @@
         </header>
 
         <main>
-            <article class="table">
+            <article class="table hide">
                 <div class="game-info">
                     <div class="select-option">
                         <select name="mode" id="game-mode">
@@ -104,7 +104,7 @@
             <article class="settings">
                 <aside>
                     <div class="option">
-                        <input type="radio" name="user-option" id="account" checked class="hide">
+                        <input checked type="radio" name="user-option" id="account" class="hide">
                         <label for="account">Account</label>
                     </div>
                     <div class="option">
@@ -130,16 +130,92 @@
                             <input type="password" id="password" disabled value="Password">
                         </div>
 
-                        <div class="account-stats">
+                        <div class="account-stats-horizontal">
                             <h3>Account Statistics</h3>
-                            <p class="account-score">0</p>
-                            <p class="best-time">0s</p>
+                        
+                            <table class="score-stats stats-table">
+                                <thead>
+                                    <tr>
+                                        <th>Category</th>
+                                        <th colspan="3">Score</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Stats</td>
+                                        <td>Total Score</td>
+                                        <td>Average Score</td>
+                                        <td>Score per Second</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Value</td>
+                                        <td class="input account-score">0</td>
+                                        <td class="input avarage-score">0</td>
+                                        <td class="input score-per-time">0</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        
+                            <table class="time-stats stats-table">
+                                <thead>
+                                    <tr>
+                                        <th>Category</th>
+                                        <th colspan="3">Time</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Stats</td>
+                                        <td>Best Time</td>
+                                        <td>Average Time</td>
+                                        <td>Worst Time</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Value</td>
+                                        <td class="input best-time">0</td>
+                                        <td class="input avarage-time">0</td>
+                                        <td class="input worst-time">0</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        
+                            <table class="game-stats stats-table">
+                                <thead>
+                                    <tr>
+                                        <th>Category</th>
+                                        <th colspan="3">Game Mode</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Stats</td>
+                                        <td>Easy</td>
+                                        <td>Medium</td>
+                                        <td>Hard</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Value</td>
+                                        <td class="input easy-percent">0</td>
+                                        <td class="input medium-percent">0</td>
+                                        <td class="input hard-percent">0</td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
+                        
+                        
                     </div>
 
 
                     <div class="preferences-option hide">
                         <h3>User Preferences</h3>
+                        <div class="mode">
+                            <p>System Mode</p>
+                            <label class="switch">
+                                <input type="checkbox" id="theme-switch">
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
                     </div>
                 </section>
             </article>

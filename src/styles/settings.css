@@ -9,15 +9,15 @@
 
 aside {
     background-color: #f8f8f8;
-    border-radius: .5rem;
+    border-radius: 0.5rem;
 }
 
 .option label {
+    display: block;
     padding: 1rem 2em;
-    width: 80px;
-    display: inline-block;
     cursor: pointer;
 }
+
 
 .option:first-child label {
     border-radius: .5rem .5rem 0rem 0rem;
@@ -65,3 +65,153 @@ input[type="radio"]:checked + label {
 .settings input::placeholder {
     font-size: 1rem;
 }
+
+
+
+.account-stats-horizontal h3 {
+    margin-top: 4rem;
+}
+
+.stats-wrapper {
+    /* display: flex; */
+    /* margin: 2rem; */
+}
+.stats-wrapper p {
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* align-items: center; */
+}
+
+.stats-wrapper span {
+    /* font-weight: 600; */
+}
+
+.score-stats {
+ /* gap: 3rem; */
+}
+
+.time-stats {
+    /* gap: 5rem;     */
+}
+
+.game-stats {
+    /* gap: 8.35rem;     */
+}
+
+
+.account-stats-horizontal {
+    /* max-width: 1000px; */
+    /* margin: 0 auto; */
+    /* font-family: Arial, sans-serif; */
+}
+
+
+
+.stats-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    border: 1px dotted #ddd;
+}
+
+.stats-table th,
+.stats-table td {
+    padding: 1rem 0px;
+    text-align: center;
+    width: 200px;
+}
+
+.stats-table thead {
+    background-color: #f4f4f4;
+}
+
+.stats-table th {
+    font-size: 1.1em;
+}
+
+.stats-table td {
+    font-style: italic;
+    color: #999;
+}
+
+.stats-table .input {
+    font-style: normal;
+    color: #000;
+}
+
+.stats-table td:first-child {
+    width: 200px;
+    font-weight: bold;
+    background-color: #fafafa;
+    font-style: normal;
+    color: #000;
+}
+
+.time-stats .input::after {
+    content: 's';
+}
+
+.game-stats .input::after {
+    content: '%';
+}
+
+
+
+
+
+.mode {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 50%;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+  }
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    
+    cursor: pointer;
+    background-color: #ccc;
+
+    border-radius: 1rem;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+
+    height: 1.5rem;
+    width: 1.5rem;
+    border-radius: 1rem;
+
+    left: .34rem;
+    bottom: .34rem;
+
+    background-color: white;
+    transition: .2s ease-in-out;
+}
+
+input:checked + .slider {
+    background-color: var(--select-10);
+  }
+
+  input:checked + .slider:before {
+      transform: translateX(1.5rem);
+      transition: .2s ease-in-out;
+  }

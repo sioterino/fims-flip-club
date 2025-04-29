@@ -1,5 +1,6 @@
 .table {
   max-width: var(--max-width);
+  width: fit-content;
   margin: auto;
   display: flex;
   flex-direction: column;
