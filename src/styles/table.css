@@ -54,7 +54,7 @@
 
 .select-option select:focus ~ .arrow {
   color: var(--select-10);
-  transform: rotate(180deg);
+  transform: rotate(-180deg);
 }
 
 .game-info button {
