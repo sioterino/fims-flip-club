@@ -21,7 +21,7 @@ class Main {
     setupGame() {
         this.game.newGame('medium');
 
-        document.querySelector('.new-game-button').addEventListener('click', this.game.newGame);
+        document.querySelector('.new-game-button').addEventListener('click', () => this.game.newGame());
 
         document.querySelector('.select-option select').addEventListener('change', (e) => this.game.newGame(e.target.value));
 
