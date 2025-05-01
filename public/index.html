@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="../src/styles/settings.css">
 
     <link rel="stylesheet" href="../src/styles/dialog.css">
+    <link rel="stylesheet" href="../src/styles/popup.css">
     <link rel="stylesheet" href="../src/styles/auxstyle.css">
 
     <script type="module" src="../src/main.js" defer></script>
@@ -62,17 +63,17 @@
 
         <header>
             <nav>
-                <a class="logotipo" href="./index.html">
+                <div class="logotipo">
                     <h1 class="page-name">Fim's Flip Club</h1>
                     <img src="../src/assets/images/fims-club-logo.png" alt="fim's flip club logo">
-                </a>
+                </div>
                 <div class="user-options">
                     <div class="userinfo">
                         <span class="icon user">account_circle</span>
                         <p class="username">Username</p>
                     </div>
                     <ul class="user-dropdown">
-                        <li>Settings</li>
+                        <li class="setting-button">Settings</li>
                         <li class="logout-button">Log Out</li>
                     </ul>
                 </div>
@@ -80,7 +81,7 @@
         </header>
 
         <main>
-            <article class="table hide">
+            <article class="table">
                 <div class="game-info">
                     <div class="select-option">
                         <select name="mode" id="game-mode">
@@ -101,7 +102,7 @@
                 <div class="board"></div>
             </article>
 
-            <article class="settings">
+            <article class="settings hide">
                 <aside>
                     <div class="option">
                         <input checked type="radio" name="user-option" id="account" class="hide">
@@ -132,12 +133,12 @@
 
                         <div class="account-stats-horizontal">
                             <h3>Account Statistics</h3>
-                        
+
                             <table class="score-stats stats-table">
                                 <thead>
                                     <tr>
-                                        <th>Category</th>
-                                        <th colspan="3">Score</th>
+                                        <th scope="col">Category</th>
+                                        <th scope="col" colspan="3">Score</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -155,12 +156,12 @@
                                     </tr>
                                 </tbody>
                             </table>
-                        
+
                             <table class="time-stats stats-table">
                                 <thead>
                                     <tr>
-                                        <th>Category</th>
-                                        <th colspan="3">Time</th>
+                                        <th scope="col">Category</th>
+                                        <th scope="col" colspan="3">Time</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -178,12 +179,12 @@
                                     </tr>
                                 </tbody>
                             </table>
-                        
+
                             <table class="game-stats stats-table">
                                 <thead>
                                     <tr>
-                                        <th>Category</th>
-                                        <th colspan="3">Game Mode</th>
+                                        <th scope="col">Category</th>
+                                        <th scope="col" colspan="3">Game Mode</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -202,15 +203,15 @@
                                 </tbody>
                             </table>
                         </div>
-                        
-                        
+
+
                     </div>
 
 
                     <div class="preferences-option hide">
                         <h3>User Preferences</h3>
                         <div class="mode">
-                            <p>System Mode</p>
+                            <p>Dark Mode</p>
                             <label class="switch">
                                 <input type="checkbox" id="theme-switch">
                                 <span class="slider round"></span>
@@ -257,6 +258,11 @@
             </form>
         </div>
     </dialog>
+
+    <div class="popup">
+        <p>Popup text...</p>
+        <span class="icon">check_circle</span>
+    </div>
 
   </body>
 </html>

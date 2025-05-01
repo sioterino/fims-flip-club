@@ -36,6 +36,7 @@ class Dialog {
         })
 
         this.form.reset()
+        this.#closeModal()
     }
 
     get data() {

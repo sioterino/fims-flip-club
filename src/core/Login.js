@@ -1,4 +1,5 @@
 import { Storage } from "../utils/Storage.js";
+import { DOM } from "../utils/DOM.js";
 import { init } from '../main.js';
 
 class Login {
@@ -21,7 +22,7 @@ class Login {
     const session = Storage.loadFromSessionStorage("fims-flip-club:session");
 
     if (session?.isLoggedIn) {
-      document.querySelector(".username").textContent = session.username;
+      document.querySelector(".userinfo .username").textContent = session.username;
       document.querySelector(".login-wrapper").classList.add("hide");
       document.querySelector(".app-body").classList.remove("hide");
       this.signin.classList.add("hide");
@@ -93,6 +94,8 @@ class Login {
     this.#toggleLogin();
     this.signin.querySelector(".send-to-sigup").classList.add("hidden");
     this.signin.querySelector(".link").classList.add("hide");
+
+    DOM.popup('Account was successfully created!')
   }
 
   #signin(data) {
@@ -111,7 +114,7 @@ class Login {
     });
 
     
-    document.querySelector(".username").textContent = user.username;
+    document.querySelector(".userinfo .username").textContent = user.username;
     
     document.querySelector(".login-wrapper").classList.add("hide");
     document.querySelector(".app-body").classList.remove("hide");
@@ -153,6 +156,40 @@ class Login {
         new Error("Invalid Warning Method");
     }
   }
+
+  editUsername(data) {
+    const loginData = Storage.loadFromLocalStorage('fims-flip-club:login')
+    const sessionData = Storage.loadFromSessionStorage('fims-flip-club:session')
+    
+    const i = loginData.findIndex(u => u.id == sessionData.id)
+
+    loginData[i]['username'] = data.username
+    
+    Storage.saveToLocalStorage('fims-flip-club:login', loginData)
+
+    document.querySelector('.userinfo .username').textContent = data.username
+    DOM.popup('Username updated successfully!')
+    DOM.settings()
+  }
+
+  editPassword(data) {
+    const loginData = Storage.loadFromLocalStorage('fims-flip-club:login')
+    const sessionData = Storage.loadFromSessionStorage('fims-flip-club:session')
+    
+    const i = loginData.findIndex(u => u.id == sessionData.id)
+
+    if(!this.#verifyPassword(loginData[i].username, data['old-password'])) {
+      DOM.popup('Incorrect password...', true)
+      return
+    }
+
+    loginData[i]['password'] = Storage.encode(data['new-password'])
+    
+    Storage.saveToLocalStorage('fims-flip-club:login', loginData)
+    DOM.popup('Password updated successfully!')
+    DOM.settings()
+  }
+
 }
 
 export { Login };

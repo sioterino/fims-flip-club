@@ -72,39 +72,6 @@ input[type="radio"]:checked + label {
     margin-top: 4rem;
 }
 
-.stats-wrapper {
-    /* display: flex; */
-    /* margin: 2rem; */
-}
-.stats-wrapper p {
-    /* display: flex; */
-    /* flex-direction: column; */
-    /* align-items: center; */
-}
-
-.stats-wrapper span {
-    /* font-weight: 600; */
-}
-
-.score-stats {
- /* gap: 3rem; */
-}
-
-.time-stats {
-    /* gap: 5rem;     */
-}
-
-.game-stats {
-    /* gap: 8.35rem;     */
-}
-
-
-.account-stats-horizontal {
-    /* max-width: 1000px; */
-    /* margin: 0 auto; */
-    /* font-family: Arial, sans-serif; */
-}
-
 
 
 .stats-table {
@@ -169,8 +136,8 @@ input[type="radio"]:checked + label {
 .switch {
     position: relative;
     display: inline-block;
-    width: 60px;
-    height: 34px;
+    width: 3.75rem;
+    height: 2.2rem;
   }
 
 .switch input {

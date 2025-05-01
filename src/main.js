@@ -3,6 +3,7 @@ import { User } from "./core/User.js";
 import { Game } from "./core/Game.js";
 import { Dialog } from "./core/Dialog.js";
 import { Storage } from "./utils/Storage.js";
+import { DOM } from "./utils/DOM.js";
 
 class Main {
     constructor() {
@@ -16,10 +17,12 @@ class Main {
         this.user = new User(userDataEntry ?? { id: this.session.id });
 
         this.game = new Game(this.user);
-        this.setupGame();
+
+        this.#setupGame();
+        this.#setupDOM();
     }
 
-    setupGame() {
+    #setupGame() {
         this.game.newGame('medium');
 
         document.querySelector('.new-game-button').addEventListener('click', () => this.game.newGame());
@@ -45,7 +48,23 @@ class Main {
             resume.classList.toggle('hidden');
         });
     }
+
+    #setupDOM() {
+        DOM.settings()
+        DOM.stats()
+        DOM.toggleSettings()
+        DOM.toggleBetweenSettings()
+        DOM.themeSwitch()
+
+        const editPassword = new Dialog(document.querySelector('#edit-password-dialog'), document.querySelector('#edit-password'))
+        const editUsername = new Dialog(document.querySelector('#edit-username-dialog'), document.querySelector('#edit-username'))
+
+        editPassword.form.addEventListener('submit', () => this.login.editPassword(editPassword.data))
+        editUsername.form.addEventListener('submit', () => this.login.editUsername(editUsername.data))
+    }
 }
+
+
 
 let main = null;
 
@@ -55,17 +74,7 @@ export function init() {
   main = new Main();
 
   document.querySelector(".logout-button")?.addEventListener("click", main.login.logout);
+
 }
 
 init();
-
-const editPassword = new Dialog(document.querySelector('#edit-password-dialog'), document.querySelector('#edit-password'))
-const editUsername = new Dialog(document.querySelector('#edit-username-dialog'), document.querySelector('#edit-username'))
-
-document.querySelectorAll('input[name="user-option"]')
-.forEach(radio => {
-    radio.addEventListener('change', () => {
-        document.querySelector('.account-option').classList.toggle('hide', radio.id !== 'account')
-        document.querySelector('.preferences-option').classList.toggle('hide', radio.id !== 'preferences')
-    })
-})
