@@ -1,5 +1,5 @@
 .warning {
-    color: red;
+    color: var(--red);
     font-style: italic;
 }
 

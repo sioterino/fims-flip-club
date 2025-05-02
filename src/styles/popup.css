@@ -11,7 +11,7 @@
 
     width: fit-content;
 
-    color: white;
+    color: var(--white);
 
     padding: .3rem 3rem;
     border-radius: 4rem;

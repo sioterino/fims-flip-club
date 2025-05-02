@@ -8,7 +8,7 @@
 }
 
 aside {
-    background-color: #f8f8f8;
+    background-color: var(--gray-100);
     border-radius: 0.5rem;
 }
 
@@ -24,15 +24,15 @@ aside {
 }
 
 .option label:hover {
-    background-color: #f0f0f0;
+    background-color: var(--gray-400);
 }
 
 input[type="radio"]:checked + label {
-    background-color: #e0e0e0;
+    background-color: var(--gray-200);
 }
 
 .settings section {
-    background-color: #f8f8f8;
+    background-color: var(--gray-100);
     padding: 5rem;
     width: 100%;
     border-radius: .5rem;
@@ -58,7 +58,7 @@ input[type="radio"]:checked + label {
 .settings input {
     padding: .7rem 1rem .55rem;
     background-color: transparent;
-    border: 1px solid lightgray;
+    border: 1px solid  var(--gray-500);
     border-radius: .5rem;
 }
 
@@ -78,7 +78,7 @@ input[type="radio"]:checked + label {
     width: 100%;
     border-collapse: collapse;
     margin: 20px 0;
-    border: 1px dotted #ddd;
+    border: 1px dotted var(--gray-400);
 }
 
 .stats-table th,
@@ -89,7 +89,7 @@ input[type="radio"]:checked + label {
 }
 
 .stats-table thead {
-    background-color: #f4f4f4;
+    background-color: var(--gray-200);;
 }
 
 .stats-table th {
@@ -98,20 +98,20 @@ input[type="radio"]:checked + label {
 
 .stats-table td {
     font-style: italic;
-    color: #999;
+    color: var(--gray-600);;
 }
 
 .stats-table .input {
     font-style: normal;
-    color: #000;
+    color: var(--black);
 }
 
 .stats-table td:first-child {
     width: 200px;
     font-weight: bold;
-    background-color: #fafafa;
+    background-color: var(--gray-100200);
     font-style: normal;
-    color: #000;
+    color: var(--black);
 }
 
 .time-stats .input::after {
@@ -131,6 +131,7 @@ input[type="radio"]:checked + label {
     justify-content: space-between;
     align-items: center;
     margin-right: 50%;
+    margin-top: 1rem;
 }
 
 .switch {
@@ -154,7 +155,7 @@ input[type="radio"]:checked + label {
     bottom: 0;
     
     cursor: pointer;
-    background-color: #ccc;
+    background-color: var(--gray-400);
 
     border-radius: 1rem;
 }
@@ -170,7 +171,7 @@ input[type="radio"]:checked + label {
     left: .34rem;
     bottom: .34rem;
 
-    background-color: white;
+    background-color: var(--white);
     transition: .2s ease-in-out;
 }
 

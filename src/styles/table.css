@@ -27,10 +27,10 @@
   padding: .5rem 3rem .5rem 1.5rem;
   font-size: 1rem;
   outline: none;
-  border: 1px solid lightgray;
+  border: 1px solid  var(--gray-500);
   offset: none;
   border-radius: .5rem;
-  color: gray;
+  color: var(--gray-600);
 }
 
 .select-option select:hover,
@@ -40,7 +40,7 @@
 }
 
 .select-option .arrow {
-  color: lightgray;
+  color:  var(--gray-500);
   position: absolute;
   cursor: pointer;
   pointer-events: none;
@@ -70,7 +70,7 @@
   cursor: pointer;
 
   background-color: var(--select-10);
-  color: white;
+  color: var(--white);
   font-weight: 600;
 }
 
@@ -84,7 +84,7 @@
 
 .game-info {
   font-size: 1.5rem;
-  color: gray;
+  color: var(--gray-600);
 }
 
 .timer {
@@ -105,5 +105,5 @@
 
   padding: 2rem;
   border-radius: 1rem;
-  border: 1px dotted lightgray;
+  border: 1px dotted  var(--gray-500);
 }

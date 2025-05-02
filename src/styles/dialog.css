@@ -1,5 +1,5 @@
 dialog {
-  background-color: white;
+  background-color: var(--white);
   border-radius: .5rem;
   margin: auto;
   outline: none;
@@ -8,7 +8,7 @@ dialog {
 }
 
 dialog::backdrop {
-  background-color: rgba(13, 17, 23, 0.5);
+  background-color: var(--b-alpha-5);
 }
 
 dialog .wrapper {
@@ -39,7 +39,7 @@ dialog input {
     padding: .5rem 1rem;
 
     border-radius: .25rem;
-    border: 1px solid lightgray;
+    border: 1px solid  var(--gray-500);
     transition: all .2s ease-in-out;
 
     width: 250px;
@@ -59,7 +59,7 @@ dialog label {
     left: 5%;
     transform: translateY(-50%);
 
-    color: gray;
+    color: var(--gray-600);
     padding: 0px .5rem;
     
     cursor: text;
@@ -70,7 +70,7 @@ dialog label {
 
 dialog input:focus ~ label,
 dialog input:valid ~ label {
-    background-color: white;
+    background-color: var(--white);
     top: 0px;
     font-size: .7rem;
 }
@@ -91,7 +91,7 @@ dialog button {
     offset: none;
     border: none;
 
-    color: #fff;
+    color: var(--white);
 
     font-size: 1rem;
     font-weight: 600;
@@ -119,13 +119,13 @@ dialog .submit-button:active {
 dialog .cancel-button {
     width: 38%;
     /* padding-inline: 1rem; */
-    background-color: #C0C0C0;
+    background-color: var(--gray-500);
 }
 
 dialog .cancel-button:hover {
-    background-color: gray;
+    background-color: var(--gray-600);
 }
 
 dialog .cancel-button:active {
-    background-color: #404040;
+    background-color: var(--gray-700);
 }

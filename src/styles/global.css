@@ -3,32 +3,54 @@
 
 :root {
   --red: #fa4549;
-  --yellow: #e7a100;
   --green: #3fb950;
-  --blue: #1d69e0;
-  --purple: #ab50e0;
-
-  --dark-red: #563039;
-  --dark-yellow: #564230;
-  --dark-green: #30563f;
-  --dark-blue: #304656;
-  --dark-purple: #333056;
-
-  --select-10: #2275f8;
-  --select-0: #121d57;
-  --select-5: #364291;
-
-  --white: #fff;
-  --black: #24292f;
-  --gray: #67707a;
-
   --fearless-blue: #6d92c5;
 
+  --select-10: #2275f8;
+  --select-5: #364291;
+  --select-0: #121d57;
+
+  --white: #fff;
+  --black: #000;
+
+  --gray-100: #f8f9fa;
+  --gray-200: #e9ecef;
+  --gray-300: #dee2e6;
+  --gray-400: #ced4da;
+  --gray-500: #adb5bd;
+  --gray-600: #6c757d;
+  --gray-700: #495057;
+  --gray-800: #343a40;
+  --gray-900: #212529;
+
+  --b-alpha-5: rgba(0, 0, 0, .5);
+  --2-alpha-2: rgba(255, 255, 255, .2);
+
   --font: "Poppins", Helvetica, Arial, sans-serif;
-  --font-color: #fff;
 
   --max-width: 1200px;
-  --min-width: 300px;
+}
+
+.dark-mode {
+  --white: #000;
+  --black: #fff;
+
+  --gray-100: #212529;
+  --gray-200: #343a40;
+  --gray-300: #495057;
+  --gray-400: #6c757d;
+  --gray-500: #adb5bd;
+  --gray-600: #ced4da;
+  --gray-700: #dee2e6;
+  --gray-800: #e9ecef;
+  --gray-900: #f8f9fa;
+
+  --b-alpha-5: rgba(255, 255, 255, 0.5);
+  --2-alpha-2: rgba(0, 0, 0, 0.2);
+}
+
+body {
+  background-color: var(--white);
 }
 
 * {
@@ -39,6 +61,12 @@
 
   scrollbar-width: none;
   scroll-behavior: smooth;
+  color: var(--black);
+}
+
+input, select {
+  color: var(--black);
+  background-color: var(--white);
 }
 
 .icon {
